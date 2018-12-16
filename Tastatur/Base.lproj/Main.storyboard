@@ -45,11 +45,10 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="U5T-ug-Ist" firstAttribute="top" secondItem="UB7-Gr-pKT" secondAttribute="top" constant="148" id="5o8-f7-ZRs"/>
+                            <constraint firstItem="U5T-ug-Ist" firstAttribute="top" secondItem="f4a-P7-sch" secondAttribute="top" constant="168" id="5o8-f7-ZRs"/>
                             <constraint firstItem="UB7-Gr-pKT" firstAttribute="bottom" secondItem="y0z-Xe-CSC" secondAttribute="bottom" constant="122" id="8j0-jD-eqO"/>
                             <constraint firstItem="y0z-Xe-CSC" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="D1L-jj-W3s"/>
                             <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="U5T-ug-Ist" secondAttribute="trailing" constant="10" id="IvL-1i-ibw"/>
-                            <constraint firstItem="y0z-Xe-CSC" firstAttribute="top" secondItem="U5T-ug-Ist" secondAttribute="bottom" constant="218" id="S1g-rb-9dA"/>
                             <constraint firstItem="U5T-ug-Ist" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="ng8-Gc-jrr"/>
                             <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="y0z-Xe-CSC" secondAttribute="trailing" constant="10" id="qkg-vE-qgO"/>
                         </constraints>

@@ -40,17 +40,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        let distanceToBottom = view.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
+        
+        print("distanceToBottom = \(distanceToBottom)")
         print("keyboardRect = \(keyboardRect)")
         
-        if notification.name == UIResponder.keyboardWillShowNotification ||
-            notification.name == UIResponder.keyboardWillChangeFrameNotification {
+        if keyboardRect.height > distanceToBottom {
+        
+            if notification.name == UIResponder.keyboardWillShowNotification ||
+                notification.name == UIResponder.keyboardWillChangeFrameNotification {
+                view.frame.origin.y = -(keyboardRect.height - distanceToBottom)
+            } else {
+                view.frame.origin.y = 0
+            }
             
-            let distanceToBottom = view.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
-            print("distanceToBottom = \(distanceToBottom)")
-            
-            view.frame.origin.y = -(keyboardRect.height - distanceToBottom)
-        } else {
-            view.frame.origin.y = 0
         }
     }
     
