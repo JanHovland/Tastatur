@@ -45,19 +45,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if notification.name == UIResponder.keyboardWillShowNotification ||
             notification.name == UIResponder.keyboardWillChangeFrameNotification {
             
-            // Her virker alt ok, nå gjenstår det kun å finne distanceToBottom
-            // let distanceToBottom = 122
+            let distanceToBottom = view.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
+            print("distanceToBottom = \(distanceToBottom)")
             
-            view.frame.origin.y = -(keyboardRect.height - 122)
+            view.frame.origin.y = -(keyboardRect.height - distanceToBottom)
         } else {
             view.frame.origin.y = 0
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        activeField = textField
         return true
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        activeField?.resignFirstResponder()
+        activeField = nil
+        return true
+    }
+    
+
+    
+    
     
 }
 

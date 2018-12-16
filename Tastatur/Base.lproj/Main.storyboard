@@ -18,47 +18,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="218" translatesAutoresizingMaskIntoConstraints="NO" id="XQX-Qt-rJ1">
-                                <rect key="frame" x="10" y="168" width="300" height="278"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5T-ug-Ist">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="S2P-l6-kX5"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ntQ-S7-N5I">
-                                        <rect key="frame" x="0.0" y="248" width="300" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="vyh-i3-OjB"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-Xe-CSC">
+                                <rect key="frame" x="10" y="416" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.2026840644" green="0.66666668650000005" blue="0.65442001750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ckP-KH-D8h"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3o3-ZS-RPV"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5T-ug-Ist">
+                                <rect key="frame" x="10" y="168" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.30055155420000002" green="1" blue="0.1888954521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9w3-vt-HeF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S2P-l6-kX5"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="XQX-Qt-rJ1" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="Crh-lo-a6c"/>
-                            <constraint firstItem="XQX-Qt-rJ1" firstAttribute="top" secondItem="UB7-Gr-pKT" secondAttribute="top" constant="148" id="GvG-tS-5ze"/>
-                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="bottom" secondItem="XQX-Qt-rJ1" secondAttribute="bottom" constant="122" id="hEd-d1-5fq"/>
-                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="XQX-Qt-rJ1" secondAttribute="trailing" constant="10" id="qc9-zH-JYu"/>
+                            <constraint firstItem="U5T-ug-Ist" firstAttribute="top" secondItem="UB7-Gr-pKT" secondAttribute="top" constant="148" id="5o8-f7-ZRs"/>
+                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="bottom" secondItem="y0z-Xe-CSC" secondAttribute="bottom" constant="122" id="8j0-jD-eqO"/>
+                            <constraint firstItem="y0z-Xe-CSC" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="D1L-jj-W3s"/>
+                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="U5T-ug-Ist" secondAttribute="trailing" constant="10" id="IvL-1i-ibw"/>
+                            <constraint firstItem="y0z-Xe-CSC" firstAttribute="top" secondItem="U5T-ug-Ist" secondAttribute="bottom" constant="218" id="S1g-rb-9dA"/>
+                            <constraint firstItem="U5T-ug-Ist" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="ng8-Gc-jrr"/>
+                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="y0z-Xe-CSC" secondAttribute="trailing" constant="10" id="qkg-vE-qgO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UB7-Gr-pKT"/>
                     </scrollView>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="textFieldA" destination="U5T-ug-Ist" id="9Bk-4g-pME"/>
-                        <outlet property="textFieldB" destination="ntQ-S7-N5I" id="z2Z-wa-0CG"/>
+                        <outlet property="textFieldB" destination="y0z-Xe-CSC" id="4Ft-Po-k8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1701" y="136"/>
+            <point key="canvasLocation" x="-2270" y="87"/>
         </scene>
     </scenes>
 </document>
