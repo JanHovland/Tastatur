@@ -6,6 +6,11 @@
 //  Copyright © 2018 Jan . All rights reserved.
 //
 
+/*
+    For å få appen til å oppføre seg korrekt, må du ikke bruke "Stack View", kun constaraints.
+    Dette vil nå virke for både Portrait og Landscape.
+*/
+
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -29,6 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     deinit {
+        // Remove observers
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -42,8 +48,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let distanceToBottom = view.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
         
-        print("distanceToBottom = \(distanceToBottom)")
-        print("keyboardRect = \(keyboardRect)")
+//        print("distanceToBottom = \(distanceToBottom)")
+//        print("keyboardRect = \(keyboardRect)")
         
         if keyboardRect.height > distanceToBottom {
         
@@ -67,10 +73,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         activeField = nil
         return true
     }
-    
-
-    
-    
     
 }
 

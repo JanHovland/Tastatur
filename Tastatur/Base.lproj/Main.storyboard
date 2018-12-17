@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dWa-tr-8hG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,58 +11,57 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="hIW-oF-48Y">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tastatur" customModuleProvider="target" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="f4a-P7-sch">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <viewController id="dWa-tr-8hG" customClass="ViewController" customModule="Tastatur" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a6O-Ea-XYl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-Xe-CSC">
-                                <rect key="frame" x="10" y="416" width="300" height="30"/>
-                                <color key="backgroundColor" red="0.2026840644" green="0.66666668650000005" blue="0.65442001750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="B" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sea-4C-j2m">
+                                <rect key="frame" x="10" y="560" width="355" height="30"/>
+                                <color key="backgroundColor" red="0.30055155420000002" green="1" blue="0.1888954521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ckP-KH-D8h"/>
+                                    <constraint firstAttribute="height" constant="30" id="0Bh-qU-0QC"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3o3-ZS-RPV"/>
-                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5T-ug-Ist">
-                                <rect key="frame" x="10" y="168" width="300" height="30"/>
-                                <color key="backgroundColor" red="0.30055155420000002" green="1" blue="0.1888954521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAX-6S-mn2">
+                                <rect key="frame" x="10" y="256" width="355" height="30"/>
+                                <color key="backgroundColor" red="0.2026840644" green="0.66666668650000005" blue="0.65442001750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9w3-vt-HeF"/>
+                                    <constraint firstAttribute="height" constant="30" id="oCO-WT-5DE"/>
                                 </constraints>
+                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S2P-l6-kX5"/>
-                                </connections>
                             </textField>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="U5T-ug-Ist" firstAttribute="top" secondItem="f4a-P7-sch" secondAttribute="top" constant="168" id="5o8-f7-ZRs"/>
-                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="bottom" secondItem="y0z-Xe-CSC" secondAttribute="bottom" constant="122" id="8j0-jD-eqO"/>
-                            <constraint firstItem="y0z-Xe-CSC" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="D1L-jj-W3s"/>
-                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="U5T-ug-Ist" secondAttribute="trailing" constant="10" id="IvL-1i-ibw"/>
-                            <constraint firstItem="U5T-ug-Ist" firstAttribute="leading" secondItem="UB7-Gr-pKT" secondAttribute="leading" constant="10" id="ng8-Gc-jrr"/>
-                            <constraint firstItem="UB7-Gr-pKT" firstAttribute="trailing" secondItem="y0z-Xe-CSC" secondAttribute="trailing" constant="10" id="qkg-vE-qgO"/>
+                            <constraint firstItem="25G-ru-MMG" firstAttribute="trailing" secondItem="sea-4C-j2m" secondAttribute="trailing" constant="10" id="12d-ZN-E9p"/>
+                            <constraint firstItem="sea-4C-j2m" firstAttribute="leading" secondItem="25G-ru-MMG" secondAttribute="leading" constant="10" id="4GU-1q-FNy"/>
+                            <constraint firstItem="YAX-6S-mn2" firstAttribute="leading" secondItem="25G-ru-MMG" secondAttribute="leading" constant="10" id="QjC-hf-bE8"/>
+                            <constraint firstItem="sea-4C-j2m" firstAttribute="top" secondItem="YAX-6S-mn2" secondAttribute="bottom" constant="274" id="WsV-Qr-jMr">
+                                <variation key="heightClass=compact-widthClass=compact" constant="153"/>
+                            </constraint>
+                            <constraint firstItem="YAX-6S-mn2" firstAttribute="top" secondItem="25G-ru-MMG" secondAttribute="top" constant="236" id="ZFu-ZD-1JY">
+                                <variation key="heightClass=compact-widthClass=compact" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="25G-ru-MMG" firstAttribute="trailing" secondItem="YAX-6S-mn2" secondAttribute="trailing" constant="10" id="dBn-0j-yTG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UB7-Gr-pKT"/>
-                    </scrollView>
-                    <size key="freeformSize" width="320" height="568"/>
+                        <viewLayoutGuide key="safeArea" id="25G-ru-MMG"/>
+                    </view>
                     <connections>
-                        <outlet property="textFieldA" destination="U5T-ug-Ist" id="9Bk-4g-pME"/>
-                        <outlet property="textFieldB" destination="y0z-Xe-CSC" id="4Ft-Po-k8o"/>
+                        <outlet property="textFieldA" destination="YAX-6S-mn2" id="17d-cG-fDU"/>
+                        <outlet property="textFieldB" destination="sea-4C-j2m" id="N3L-sq-m2g"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXf-31-re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2270" y="87"/>
+            <point key="canvasLocation" x="-2442" y="47"/>
         </scene>
     </scenes>
 </document>
