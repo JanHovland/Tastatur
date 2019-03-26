@@ -9,6 +9,7 @@
 /*
     For å få appen til å oppføre seg korrekt, må du ikke bruke "Stack View", kun constaraints.
     Dette vil nå virke for både Portrait og Landscape.
+    Virker kun på Text Field, ikke på Texy View
 */
 
 import UIKit
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textFieldA: UITextField!
     @IBOutlet weak var textFieldB: UITextField!
+    @IBOutlet weak var textFieldC: UITextField!
     
     var activeField: UITextField!
     
@@ -25,6 +27,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         textFieldA.delegate = self
         textFieldB.delegate = self
+        textFieldC.delegate  = self
         
         // Observe keyboard change
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
