@@ -14,13 +14,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var textFieldA: UITextField!
     @IBOutlet weak var textFieldB: UITextField!
     @IBOutlet weak var textFieldC: UITextField!
+    @IBOutlet weak var textViewA: UITextView!
     
     var activeField: UITextField!
+    var activeTextView: UITextView!
+    
+    let offset: CGFloat = 40.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textFieldA.delegate = self
         textFieldB.delegate = self
         textFieldC.delegate  = self
+        textViewA.delegate = self
         
         // Observe keyboard change
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -45,33 +50,63 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @objc func keyboardWillChange(notification: NSNotification) {
 
-        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
+        if activeField?.frame.origin.y != nil {
         
-        let distanceToBottom = view.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
-        
-//        print("distanceToBottom = \(distanceToBottom)")
-//        print("keyboardRect = \(keyboardRect)")
-        
-        if keyboardRect.height > distanceToBottom {
-        
-            if notification.name == UIResponder.keyboardWillShowNotification ||
-                notification.name == UIResponder.keyboardWillChangeFrameNotification {
-                view.frame.origin.y = -(keyboardRect.height - distanceToBottom)
-            } else {
-                view.frame.origin.y = 0
+            guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                return
             }
             
+            let distanceToBottom = view.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
+            
+            if keyboardRect.height > distanceToBottom {
+            
+                if notification.name == UIResponder.keyboardWillShowNotification ||
+                    notification.name == UIResponder.keyboardWillChangeFrameNotification {
+                    view.frame.origin.y = -(keyboardRect.height - distanceToBottom + offset)
+                } else {
+                    view.frame.origin.y = 0
+                }
+                
+            }
+        } else {
+            
+            // let distanceToBottom = view.frame.size.height
+            // view.frame.size.height = 667
+            // textViewA.frame.height = 116
+            // textViewA.frame.origin.y = 373
+            // keyboardRect.height = 216
+            
+            guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                return
+            }
+            
+            let distanceToBottom = view.frame.size.height - (activeTextView.frame.origin.y) - (activeTextView.frame.size.height)
+            
+            if keyboardRect.height > distanceToBottom {
+                view.frame.origin.y = -(keyboardRect.height - distanceToBottom + offset)
+                
+            } else {
+             view.frame.origin.y = 0
+            }
+            
+            // view.frame.origin.y = -(95 + 30)
         }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         activeField = textField
+        view.frame.origin.y = 0
+        return true
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        activeTextView = textView
+        view.frame.origin.y = 0
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.frame.origin.y = 0
         activeField?.resignFirstResponder()
         activeField = nil
         return true
