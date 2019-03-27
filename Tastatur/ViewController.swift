@@ -9,7 +9,7 @@
 /*
     For å få appen til å oppføre seg korrekt, må du ikke bruke "Stack View", kun constaraints.
     Dette vil nå virke for både Portrait og Landscape.
-    Virker kun på Text Field, ikke på Texy View
+    Virker 100% på kun Text Field. En mindre tilpasning for å ha med et Texy View (ikke helt 100%)
 */
 
 import UIKit
@@ -70,12 +70,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
             }
         } else {
             
-            // let distanceToBottom = view.frame.size.height
-            // view.frame.size.height = 667
-            // textViewA.frame.height = 116
-            // textViewA.frame.origin.y = 373
-            // keyboardRect.height = 216
-            
             guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
             }
@@ -89,23 +83,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate 
              view.frame.origin.y = 0
             }
             
-            // view.frame.origin.y = -(95 + 30)
         }
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         activeField = textField
-        view.frame.origin.y = 0
         return true
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         activeTextView = textView
+        // Necessary reset
         view.frame.origin.y = 0
         return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Necessary reset
         view.frame.origin.y = 0
         activeField?.resignFirstResponder()
         activeField = nil
